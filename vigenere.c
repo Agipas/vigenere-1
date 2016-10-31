@@ -23,8 +23,8 @@ int main(int argc, string argv[])//check input
             return 1;
         }
     }
-    string p = GetString();
-    if (p == NULL)
+    string text = GetString();
+    if (text == NULL)
     {
         printf("Error message");
         return 1;
@@ -32,16 +32,16 @@ int main(int argc, string argv[])//check input
     //coding text
     for (int i = 0, l = 0; i < strlen(p); i++)
     {
-        if (isalpha(p[i]))
+        if (isalpha(text[i]))
         {
-            if (islower(p[i]))
-                printf("%c", ((((p[i] - 'a') + ((tolower(key[l++%strlen(key)])) - 'a') % 26) % 26) + 'a'));	//Small letter
+            if (islower(text[i]))
+                printf("%c", ((((text[i] - 'a') + ((tolower(key[l++%strlen(key)])) - 'a') % 26) % 26) + 'a'));	//Small letter
             
-            if (isupper(p[i]))
-                printf("%c", ((((p[i] - 'A') + ((toupper(key[l++%strlen(key)])) - 'A') % 26) % 26) + 'A'));  // Capital letter
+            if (isupper(text[i]))
+                printf("%c", ((((text[i] - 'A') + ((toupper(key[l++%strlen(key)])) - 'A') % 26) % 26) + 'A'));  // Capital letter
         }
         else
-            printf("%c", p[i]);
+            printf("%c", text[i]);
     }
     printf("\n");
     return 0;
