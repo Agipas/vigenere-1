@@ -1,9 +1,10 @@
+//Vigenere
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-
-int main(int argc, string argv[])
+//enter key and text
+int main(int argc, string argv[])//check input
 {
     if (argc != 2)
     {
@@ -28,16 +29,16 @@ int main(int argc, string argv[])
         printf("Error message");
         return 1;
     }
-    
+    //coding text
     for (int i = 0, l = 0; i < strlen(p); i++)
     {
         if (isalpha(p[i]))
         {
             if (islower(p[i]))
-                printf("%c", ((((p[i] - 'a') + ((tolower(key[l++%strlen(key)])) - 'a') % 26) % 26) + 'a'));
+                printf("%c", ((((p[i] - 'a') + ((tolower(key[l++%strlen(key)])) - 'a') % 26) % 26) + 'a'));	//Small letter
             
             if (isupper(p[i]))
-                printf("%c", ((((p[i] - 'A') + ((toupper(key[l++%strlen(key)])) - 'A') % 26) % 26) + 'A'));
+                printf("%c", ((((p[i] - 'A') + ((toupper(key[l++%strlen(key)])) - 'A') % 26) % 26) + 'A'));  // Capital letter
         }
         else
             printf("%c", p[i]);
